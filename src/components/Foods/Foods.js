@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import FoodItems from "../FoodItems/FoodItems";
-import './Foods.css';
+import "./Foods.css";
+import loader from "../../assets/loader1.gif";
 const Foods = () => {
   const [foods, setFoods] = useState([]);
   const [category, setCategory] = useState("lunch");
@@ -51,19 +52,19 @@ const Foods = () => {
           </div>
         </nav>
       </div>
-      {loading ? (
-        <h3>Loading..</h3>
-      ) : (
-        <div className="container py-3">
-          <div className="row">
-            {selectCategory.map((food) => (
+      <div className="container py-3">
+        <div className="row">
+          {loader ? (
+            <img src={loader} className="img-fluid text-center" style={{width:'300px'}} alt="loader" />
+          ) : (
+            selectCategory.map((food) => (
               <div className="col-md-4 py-2" key={food.keys}>
                 <FoodItems foods={food}></FoodItems>
               </div>
-            ))}
-          </div>
+            ))
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
