@@ -1,0 +1,11 @@
+.cat-nav .nav-item {
+  cursor: pointer;
+  margin: 20px;
+}
+.cat-nav .nav-item span {
+  font-weight: bold;
+  font-size: 20px;
+}
+.cat-nav .nav-item span:hover {
+  color: #ff4d4d;
+}

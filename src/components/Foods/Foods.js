@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import FoodItems from "../FoodItems/FoodItems";
-
+import './Foods.css';
 const Foods = () => {
   const [foods, setFoods] = useState([]);
   const [category, setCategory] = useState("lunch");
@@ -20,9 +20,9 @@ const Foods = () => {
   const selectCategory = foods.filter((food) => food.catagories === category);
   console.log(selectCategory);
   return (
-    <div>
+    <div className="cat-nav">
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-auto">
               <li className="nav-item">
