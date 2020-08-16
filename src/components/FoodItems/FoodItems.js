@@ -1,11 +1,14 @@
-import React from 'react';
-
+import React from "react";
+import './FoodItems.css';
 const FoodItems = (props) => {
-    return (
-        <div>
-            <h1>This is items</h1>
-        </div>
-    );
+  const { title, img, price, catagories } = props.foods;
+  return (
+    <div className="card text-center">
+      <div className="foodItem-card-img">
+        <img src={img} alt="food" />
+      </div>
+    </div>
+  );
 };
 
 export default FoodItems;

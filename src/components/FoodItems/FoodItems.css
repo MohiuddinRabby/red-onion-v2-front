@@ -1,0 +1,7 @@
+.foodItem-card-img img{
+    width: 120px;
+    height: 120px;
+}
+.card:hover{
+    box-shadow: 1px 1px 1px 1px gray;
+}
