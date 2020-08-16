@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import FoodItems from "../FoodItems/FoodItems";
 
 const Foods = () => {
-  const [foods, setFoods] = useState();
-  const [category, setCategory] = useState("Lunch");
+  const [foods, setFoods] = useState([]);
+  const [category, setCategory] = useState("lunch");
   useEffect(() => {
     fetch("http://localhost:3010/foods")
       .then((res) => res.json())
@@ -14,6 +14,8 @@ const Foods = () => {
         setFoods(data);
       });
   }, []);
+  const selectCategory = foods.filter((food) => food.catagories === category);
+  console.log(selectCategory);
   return (
     <div className="container">
       <h1>This is foods</h1>
@@ -21,18 +23,34 @@ const Foods = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto">
             <li className="nav-item">
-              <Link className="nav-link">Breakfast</Link>
+              <span
+                className="nav-link"
+                onClick={() => setCategory("breakfast")}
+              >
+                Breakfast
+              </span>
             </li>
             <li className="nav-item">
-              <Link className="nav-link">Lunch</Link>
+              <span className="nav-link" onClick={() => setCategory("lunch")}>
+                Lunch
+              </span>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link">Dinner</Link>
+              <span className="nav-link" onClick={() => setCategory("dinner")}>
+                Dinner
+              </span>
             </li>
           </ul>
         </div>
       </nav>
+      <div className="row">
+        {selectCategory.map((food) => (
+          <div className="col-md-4">
+            <FoodItems foods={food}></FoodItems>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
