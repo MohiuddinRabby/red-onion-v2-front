@@ -54,8 +54,13 @@ const Foods = () => {
       </div>
       <div className="container py-3">
         <div className="row">
-          {loader ? (
-            <img src={loader} className="img-fluid text-center" style={{width:'300px'}} alt="loader" />
+          {loading ? (
+            <img
+              src={loader}
+              className="img-fluid text-center"
+              style={{ width: "200px" }}
+              alt=""
+            />
           ) : (
             selectCategory.map((food) => (
               <div className="col-md-4 py-2" key={food.keys}>
