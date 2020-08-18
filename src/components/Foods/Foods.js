@@ -12,14 +12,12 @@ const Foods = () => {
     fetch("http://localhost:3010/foods")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setFoods(data);
         setLoading(false);
       });
   }, []);
   //filter foods according to category
   const selectCategory = foods.filter((food) => food.catagories === category);
-  console.log(selectCategory);
   return (
     <div className="cat-nav">
       <div className="container">

@@ -19,15 +19,11 @@ const Nav = () => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="">
-              Login
-            </Link>
+          <li className="nav-link">
+            <a href="/login">Login</a>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="">
-              Sign in
-            </Link>
+          <li className="nav-link">
+            <a href="/signup">Sign up</a>
           </li>
         </ul>
       </div>
