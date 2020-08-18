@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import FoodItemsDetails from "./components/FoodItemsDetails/FoodItemsDetails";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Cart from "./components/Cart/Cart";
 function App() {
   return (
     <>
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup></Signup>
+          </Route>
+          <Route path="/cart">
+            <Cart></Cart>
           </Route>
         </Switch>
       </Router>

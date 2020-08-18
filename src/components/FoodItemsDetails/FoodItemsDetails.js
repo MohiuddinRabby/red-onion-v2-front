@@ -1,9 +1,8 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
-import loader from "../../assets/loader5.gif";
 const FoodItemsDetails = () => {
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
   const { keys } = useParams();
   let history = useHistory();
@@ -31,10 +30,11 @@ const FoodItemsDetails = () => {
         <div className="row py-2">
           <div className="col-md-6">
             <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
-            <h5>{item.description}</h5>
+            {/* <h5>{item.description}</h5> */}
             <p style={{ fontSize: "30px", fontWeight: "bold" }}>
               ${item.price}
             </p>
+            <button className="btn btn-danger">Add to cart</button>
           </div>
           <div className="col-md-6">
             <img
