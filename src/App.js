@@ -6,28 +6,31 @@ import FoodItemsDetails from "./components/FoodItemsDetails/FoodItemsDetails";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Cart from "./components/Cart/Cart";
+import { CartContextProvider } from "./Context/CartContext";
 function App() {
   return (
     <>
       <Router>
-        <Nav></Nav>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/details/:keys">
-            <FoodItemsDetails></FoodItemsDetails>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/signup">
-            <Signup></Signup>
-          </Route>
-          <Route path="/cart">
-            <Cart></Cart>
-          </Route>
-        </Switch>
+        <CartContextProvider>
+          <Nav></Nav>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/details/:keys">
+              <FoodItemsDetails></FoodItemsDetails>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/signup">
+              <Signup></Signup>
+            </Route>
+            <Route path="/cart">
+              <Cart></Cart>
+            </Route>
+          </Switch>
+        </CartContextProvider>
       </Router>
     </>
   );
