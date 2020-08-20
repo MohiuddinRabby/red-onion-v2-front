@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 const Nav = () => {
+  const [cart, setCart] = useContext(CartContext);
+  console.log(cart);
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  console.log(totalPrice);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <span className="navbar-brand">Navbar</span>
