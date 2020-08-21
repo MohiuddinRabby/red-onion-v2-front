@@ -5,9 +5,6 @@ import { CartContext } from "../../Context/CartContext";
 
 const Nav = () => {
   const [cart, setCart] = useContext(CartContext);
-  console.log(cart);
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-  console.log(totalPrice);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <span className="navbar-brand">Navbar</span>
@@ -27,7 +24,7 @@ const Nav = () => {
         <ul className="navbar-nav ml-auto">
           <li>
             <Link to="/cart" className="nav-link">
-              Cart
+              Cart {cart.length}
             </Link>
           </li>
           <li className="nav-link">
