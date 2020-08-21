@@ -22,9 +22,9 @@ const FoodItemsDetails = () => {
   }, []);
   const handleCart = () => {
     const items = { name: item.title, price: item.price };
-    console.log(items);
+    // console.log(items);
     setCart((prevCart) => [...prevCart, items]);
-    console.log(cart);
+    // console.log(cart);
   };
   return (
     <div className="container">
