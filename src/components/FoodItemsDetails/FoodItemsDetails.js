@@ -20,11 +20,32 @@ const FoodItemsDetails = () => {
         setLoading(false);
       });
   }, []);
+  /** 
   const handleCart = () => {
     const items = { name: item.title, price: item.price };
     // console.log(items);
     setCart((prevCart) => [...prevCart, items]);
     // console.log(cart);
+  };
+  */
+  const handleCart = () => {
+    //keep same product as 1 in cart but change the quantity
+    const clickSameProduct = item.keys;
+    console.log(clickSameProduct);
+    const sameProduct = cart.find((pd) => pd.keys === clickSameProduct);
+    let count = 1;
+    let newCart;
+    if (sameProduct) {
+      count = sameProduct.quantity + 1;
+      sameProduct.quantity = count;
+      const others = cart.filter((pd) => pd.keys !== clickSameProduct);
+      newCart = [...others, sameProduct];
+      console.log(sameProduct, "if");
+    } else {
+      item.quantity = 1;
+      newCart = [...cart, item];
+    }
+    setCart(newCart);
   };
   return (
     <div className="container">
