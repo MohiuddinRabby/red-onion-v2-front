@@ -31,7 +31,7 @@ const FoodItemsDetails = () => {
   const handleCart = () => {
     //keep same product as 1 in cart but change the quantity
     const clickSameProduct = item.keys;
-    console.log(clickSameProduct);
+    // console.log(clickSameProduct);
     const sameProduct = cart.find((pd) => pd.keys === clickSameProduct);
     let count = 1;
     let newCart;
@@ -40,7 +40,7 @@ const FoodItemsDetails = () => {
       sameProduct.quantity = count;
       const others = cart.filter((pd) => pd.keys !== clickSameProduct);
       newCart = [...others, sameProduct];
-      console.log(sameProduct, "if");
+      // console.log(sameProduct, "if");
     } else {
       item.quantity = 1;
       newCart = [...cart, item];
@@ -51,7 +51,7 @@ const FoodItemsDetails = () => {
     <div className="container">
       <div className="py-2">
         <button className="btn btn-info" onClick={handleHistory}>
-          Back
+          Shop More
         </button>
       </div>
       {loading ? (
