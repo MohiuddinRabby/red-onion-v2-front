@@ -14,7 +14,7 @@ const FoodItemsDetails = () => {
     history.push("/");
   };
   useEffect(() => {
-    fetch("http://localhost:3010/food/" + keys)
+    fetch("https://gentle-meadow-32238.herokuapp.com/food/" + keys)
       .then((res) => res.json())
       .then((data) => {
         setItem(data);

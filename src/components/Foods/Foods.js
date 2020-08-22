@@ -9,7 +9,7 @@ const Foods = () => {
   const [category, setCategory] = useState("lunch");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3010/foods")
+    fetch("https://gentle-meadow-32238.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);
@@ -24,24 +24,30 @@ const Foods = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-auto">
-              <li className="nav-item">
+              <li className="nav-item" onClick={() => setCategory("breakfast")}>
                 <span
-                  className="nav-link"
-                  onClick={() => setCategory("breakfast")}
+                  className={
+                    category === "breakfast" ? "actives nav-link " : "nav-link"
+                  }
                 >
                   Breakfast
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link" onClick={() => setCategory("lunch")}>
+              <li className="nav-item" onClick={() => setCategory("lunch")}>
+                <span
+                  className={
+                    category === "lunch" ? "actives nav-link " : "nav-link"
+                  }
+                >
                   Lunch
                 </span>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item" onClick={() => setCategory("dinner")}>
                 <span
-                  className="nav-link"
-                  onClick={() => setCategory("dinner")}
+                  className={
+                    category === "dinner" ? "actives nav-link " : "nav-link"
+                  }
                 >
                   Dinner
                 </span>
