@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { useHistory } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
+import Shipping from "../Shipping/Shipping";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -37,7 +38,7 @@ const Cart = () => {
       <div className="py-5">
         <div className="row">
           <div className="col-md-4">
-            <h1>Shipping address Cart component</h1>
+            <Shipping></Shipping>
           </div>
           <div className="col-md-4">
             {cart.length === 0 ? (

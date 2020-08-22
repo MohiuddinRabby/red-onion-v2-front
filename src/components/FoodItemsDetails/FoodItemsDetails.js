@@ -8,6 +8,7 @@ const FoodItemsDetails = () => {
   const [loading, setLoading] = useState(true);
   const { keys } = useParams();
   const [cart, setCart] = useContext(CartContext);
+  const [successMsg, setSuccessMsg] = useState(false);
   let history = useHistory();
   const handleHistory = () => {
     history.push("/");
@@ -46,7 +47,11 @@ const FoodItemsDetails = () => {
       newCart = [...cart, item];
     }
     setCart(newCart);
+    setSuccessMsg(true);
   };
+  if (successMsg) {
+    setTimeout(() => setSuccessMsg(false), 1000);
+  }
   return (
     <div className="container">
       <div className="py-2">
@@ -64,6 +69,11 @@ const FoodItemsDetails = () => {
             <p style={{ fontSize: "30px", fontWeight: "bold" }}>
               ${item.price}
             </p>
+            {successMsg && (
+              <p className="text-success">
+                <strong>Item added to cart</strong>
+              </p>
+            )}
             <button className="btn btn-danger" onClick={handleCart}>
               Add to cart
             </button>

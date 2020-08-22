@@ -7,13 +7,11 @@ const Nav = () => {
   const [cart, setCart] = useContext(CartContext);
   return (
     <nav className="navbar navbar-expand-lg">
-      <span className="navbar-brand">
-        <img
-          src={navBrand}
-          style={{ width: "25%", height: "40px" }}
-          alt=""
-        />
-      </span>
+      <Link to="/">
+        <span className="navbar-brand">
+          <img src={navBrand} style={{ width: "25%", height: "40px" }} alt="" />
+        </span>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -30,7 +28,10 @@ const Nav = () => {
         <ul className="navbar-nav ml-auto">
           <li>
             <Link to="/cart" className="nav-link">
-              Cart {cart.length}
+              <i className="fas fa-cart-plus"></i>{" "}
+              <strong className="text-danger" style={{ fontSize: "18px" }}>
+                {cart.length}
+              </strong>
             </Link>
           </li>
           <li className="nav-link">

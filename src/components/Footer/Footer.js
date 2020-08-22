@@ -17,10 +17,18 @@ const Footer = () => {
             </a>
           </div>
           <div className="col-md-6">
-            <Link className="px-3">About online food</Link>
-            <Link className="px-3">Get help</Link>
-            <Link className="px-3">Read our blogs</Link>
-            <Link className="px-3">FAQ</Link>
+            <Link to="/" className="px-3">
+              About online food
+            </Link>
+            <Link to="/" className="px-3">
+              Get help
+            </Link>
+            <Link to="/" className="px-3">
+              Read our blogs
+            </Link>
+            <Link to="/" className="px-3">
+              FAQ
+            </Link>
           </div>
         </div>
       </div>

@@ -14,14 +14,14 @@ function App() {
         <CartContextProvider>
           <Nav></Nav>
           <Switch>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route exact path="/">
               <Home></Home>
             </Route>
             <Route path="/details/:keys">
               <FoodItemsDetails></FoodItemsDetails>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
             </Route>
             <Route path="/signup">
               <Signup></Signup>
