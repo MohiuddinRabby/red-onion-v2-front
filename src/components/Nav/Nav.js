@@ -2,12 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-
+import navBrand from "../../assets/img/logo2.png";
 const Nav = () => {
   const [cart, setCart] = useContext(CartContext);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <span className="navbar-brand">Navbar</span>
+    <nav className="navbar navbar-expand-lg">
+      <span className="navbar-brand">
+        <img
+          src={navBrand}
+          style={{ width: "25%", height: "40px" }}
+          alt=""
+        />
+      </span>
       <button
         className="navbar-toggler"
         type="button"

@@ -1,11 +1,17 @@
 import React from "react";
 import Foods from "../Foods/Foods";
+import Banner from "../Banner/Banner";
+import Footer from "../Footer/Footer";
+import ChooseUs from "../ChooseUs/ChooseUs";
 
 const Home = () => {
   return (
-    <div className="py-5">
+    <>
+      <Banner></Banner>
       <Foods></Foods>
-    </div>
+      <ChooseUs></ChooseUs>
+      <Footer></Footer>
+    </>
   );
 };
 

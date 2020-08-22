@@ -1,0 +1,11 @@
+.banner-section {
+  background: url("../../assets/img/bannerbackground.png");
+  background-size: cover;
+  min-height: 400px;
+  background-color: #ffe6e6;
+}
+#banner-slogan {
+  font-weight: bolder;
+  color: #ff3333;
+  padding-top: 50px;
+}

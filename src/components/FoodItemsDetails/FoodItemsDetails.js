@@ -60,7 +60,7 @@ const FoodItemsDetails = () => {
         <div className="row py-2">
           <div className="col-md-6">
             <h3 style={{ fontWeight: "bold" }}>{item.title}</h3>
-            {/* <h5>{item.description}</h5> */}
+            <h5>{item.description}</h5>
             <p style={{ fontSize: "30px", fontWeight: "bold" }}>
               ${item.price}
             </p>

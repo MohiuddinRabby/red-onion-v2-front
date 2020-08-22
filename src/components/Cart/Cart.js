@@ -30,11 +30,11 @@ const Cart = () => {
     shopMore.push("/");
   };
   return (
-    <div className="container py-3">
+    <div className="container py-5">
       <button className="btn btn-info" onClick={handleShopMore}>
         Shop more
       </button>
-      <div className="py-3">
+      <div className="py-5">
         <div className="row">
           <div className="col-md-4">
             <h1>Shipping address Cart component</h1>
@@ -42,7 +42,7 @@ const Cart = () => {
           <div className="col-md-4">
             {cart.length === 0 ? (
               <div>
-                <h2>No item selected</h2>
+                <h2 className="text-danger">No item selected</h2>
                 <button className="btn btn-info" onClick={handleShopMore}>
                   Go to shop
                 </button>
@@ -54,10 +54,12 @@ const Cart = () => {
             )}
           </div>
           <div className="col-md-4">
-            <h1>Pricing</h1>
-            <h2>Unit Price: {unitPrice}</h2>
-            <p>*shipping cost: {shipping}</p>
-            <h2>total price: {totalPrice}</h2>
+            <h3>Pricing</h3>
+            <hr />
+            <h4>Unit Price: ${unitPrice}</h4>
+            <p>*shipping cost: ${shipping}</p>
+            <hr />
+            <h3>total price: ${totalPrice}</h3>
           </div>
         </div>
       </div>
