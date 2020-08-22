@@ -7,7 +7,11 @@ import CartItems from "../CartItems/CartItems";
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
   console.log(cart);
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  const totalPrice = cart.reduce(
+    //curr.quantity is the quantity of the product
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
   // console.log(totalPrice);
   let shopMore = useHistory();
   const handleShopMore = () => {
