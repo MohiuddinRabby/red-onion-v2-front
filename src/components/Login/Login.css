@@ -1,0 +1,11 @@
+.login-page {
+  background: url("../../assets/img/bannerbackground.png");
+  background-size: cover;
+  min-height: 550px;
+}
+.login-form{
+  align-items:center;
+  justify-content: center;
+  max-width: 400px;
+  margin : 0 auto;
+}
